@@ -8,3 +8,15 @@ with [Buster.js](http://busterjs.org).
 All keybindings in buster-mode start with `C-c C-b` and then a two-letter mnemonic shortcut.
 
 * `td`: toggle-deferred will toggle // in the name of the current test.
+
+## Development
+
+To fetch the test dependencies:
+
+    $ cd /path/to/buster-mode
+    $ git submodule init
+    $ git submodule update
+
+Run the tests with:
+
+    $ ./util/ecukes/ecukes features
