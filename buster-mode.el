@@ -1,9 +1,9 @@
-(defun buster-go-to-current-test ()
-  (search-backward-regexp "\"[^ ]* .+\": function"))
+(defun buster-goto-current-test ()
+  (search-backward-regexp "[\"'][^ ]* .+[\"']: function" nil t))
 
 (defun buster-toggle-deffered ()
   (interactive)
-  (buster-go-to-current-test)
+  (buster-goto-current-test)
   (forward-char 1)
   (if (looking-at "//")
       (delete-char 2)
