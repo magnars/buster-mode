@@ -28,6 +28,7 @@
 (defun buster-run-all-tests ()
   (interactive)
   (switch-to-buffer-other-window "*buster-test*")
+  (erase-buffer)
   (call-process "buster-test" nil "*buster-test*" t)
   (ansi-color-apply-on-region (point-min) (point-max))
   (buster--convert-ansi-escape-sequences (point-min) (point-max)))

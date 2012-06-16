@@ -13,7 +13,7 @@
 
 (Before
  (switch-to-buffer
-  (get-buffer-create "*buster-mode*"))
+  (get-buffer-create "*testing-buffer*"))
  (erase-buffer)
  (transient-mark-mode 1)
  (cua-mode 0)
