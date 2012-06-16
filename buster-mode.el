@@ -1,20 +1,30 @@
 (defun buster-goto-current-test ()
   (search-backward-regexp "[\"'][^ ]* .+[\"']: function" nil t))
 
-(defun buster-toggle-deffered ()
-  (interactive)
+(defun buster-toggle-test-name-prefix (prefix)
   (save-excursion
     (buster-goto-current-test)
     (forward-char 1)
-    (if (looking-at "//")
-        (delete-char 2)
-      (insert "//"))))
+    (if (not (looking-at prefix))
+        (insert prefix " ")
+      (delete-char (length prefix))
+      (while (looking-at " ") (delete-char 1)))))
+
+(defun buster-toggle-deffered ()
+  (interactive)
+  (buster-toggle-test-name-prefix "//"))
+
+(defun buster-toggle-focus-rocket ()
+  (interactive)
+  (buster-toggle-test-name-prefix "=>"))
 
 (defvar buster-mode-map (make-sparse-keymap)
   "buster-mode keymap")
 
 (define-key buster-mode-map
   (kbd "C-c C-b td") 'buster-toggle-deffered)
+(define-key buster-mode-map
+  (kbd "C-c C-b tf") 'buster-toggle-focus-rocket)
 
 (define-minor-mode buster-mode
   "Buster mode"
