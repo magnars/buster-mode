@@ -10,4 +10,5 @@ Feature: Run all tests
     When I turn on buster-mode
     And I press "C-c C-b ra"
     And I switch to buffer "*buster-test*"
-    Then I should not see ""
+    Then I should not see "[1m"
+    And I should not see "[1D"
