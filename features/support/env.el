@@ -17,6 +17,7 @@
  (erase-buffer)
  (transient-mark-mode 1)
  (cua-mode 0)
+ (buster-mode 0)
  (setq set-mark-default-inactive nil)
  (deactivate-mark))
 

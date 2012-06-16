@@ -9,6 +9,16 @@
       (delete-char 2)
     (insert "//")))
 
-(global-set-key (kbd "C-c C-b td") 'buster-toggle-deffered)
+(defvar buster-mode-map (make-sparse-keymap)
+  "buster-mode keymap")
+
+(define-key buster-mode-map
+  (kbd "C-c C-b td") 'buster-toggle-deffered)
+
+(define-minor-mode buster-mode
+  "Buster mode"
+  nil
+  " Buster"
+  buster-mode-map)
 
 (provide 'buster-mode)
