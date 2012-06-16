@@ -18,6 +18,11 @@
   (interactive)
   (buster-toggle-test-name-prefix "=>"))
 
+(defun buster-run-all-tests ()
+  (interactive)
+  (switch-to-buffer-other-window "*buster-test*")
+  (call-process "buster-test" nil "*buster-test*" t))
+
 (defvar buster-mode-map (make-sparse-keymap)
   "buster-mode keymap")
 
@@ -25,6 +30,8 @@
   (kbd "C-c C-b td") 'buster-toggle-deffered)
 (define-key buster-mode-map
   (kbd "C-c C-b tf") 'buster-toggle-focus-rocket)
+(define-key buster-mode-map
+  (kbd "C-c C-b ra") 'buster-run-all-tests)
 
 (define-minor-mode buster-mode
   "Buster mode"

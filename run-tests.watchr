@@ -7,13 +7,13 @@ end
 
 def run_all_tests
   system('clear')
-  result = run "./util/ecukes/ecukes"
+  result = run "env PATH=.:$PATH ./util/ecukes/ecukes"
   puts result
 end
 
 def run_test(file)
   system('clear')
-  result = run "./util/ecukes/ecukes #{file}"
+  result = run "env PATH=.:$PATH ./util/ecukes/ecukes #{file}"
   puts result
 end
 

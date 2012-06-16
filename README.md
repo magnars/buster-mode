@@ -9,6 +9,7 @@ All keybindings in buster-mode start with `C-c C-b` and then a two-letter mnemon
 
 * `td`: toggle-deferred will toggle // in the name of the current test.
 * `tf`: toggle-focus-rocket will toggle => in the name of the current test.
+* `ra`: run-all-tests
 
 ## Development
 
