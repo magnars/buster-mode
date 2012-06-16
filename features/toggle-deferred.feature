@@ -1,7 +1,4 @@
 Feature: Toggle deferred
-  In order to quickly defer a test
-  As a buster using emacs user
-  I want to just press key please
 
   Scenario: Attempting to defer test outside buster-mode
     When I insert:
