@@ -3,11 +3,12 @@
 
 (defun buster-toggle-deffered ()
   (interactive)
-  (buster-goto-current-test)
-  (forward-char 1)
-  (if (looking-at "//")
-      (delete-char 2)
-    (insert "//")))
+  (save-excursion
+    (buster-goto-current-test)
+    (forward-char 1)
+    (if (looking-at "//")
+        (delete-char 2)
+      (insert "//"))))
 
 (defvar buster-mode-map (make-sparse-keymap)
   "buster-mode keymap")

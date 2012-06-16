@@ -3,7 +3,7 @@ Feature: Toggle deferred
   As a buster using emacs user
   I want to just press key please
 
-  Scenario: Deferring a test
+  Scenario: Attempting to defer test outside buster-mode
     When I insert:
     """
     buster.testCase('Building Page', {
@@ -29,6 +29,7 @@ Feature: Toggle deferred
     And I go to the front of the word "assert"
     And I press "C-c C-b td"
     Then I should see "//contains"
+    And the cursor should be before "assert"
 
   Scenario: Undeferring a test
     When I insert:
