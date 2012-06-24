@@ -12,7 +12,7 @@
       (delete-char (length prefix))
       (while (looking-at " ") (delete-char 1)))))
 
-(defun buster-toggle-deffered ()
+(defun buster-toggle-deferred ()
   (interactive)
   (buster-toggle-test-name-prefix "//"))
 
@@ -37,7 +37,7 @@
   "buster-mode keymap")
 
 (define-key buster-mode-map
-  (kbd "C-c C-b td") 'buster-toggle-deffered)
+  (kbd "C-c C-b td") 'buster-toggle-deferred)
 (define-key buster-mode-map
   (kbd "C-c C-b tf") 'buster-toggle-focus-rocket)
 (define-key buster-mode-map
