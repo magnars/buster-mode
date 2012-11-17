@@ -3,6 +3,8 @@
 buster-mode is a minor mode for emacs to speed up development when writing tests
 with [Buster.js](http://busterjs.org).
 
+A work in progress. You can watch us livecode it on http://emacsrocks.com
+
 ## Keybinding
 
 All keybindings in buster-mode start with `C-c C-b` and then a two-letter mnemonic shortcut.
