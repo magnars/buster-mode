@@ -81,9 +81,11 @@
 
 (define-minor-mode buster-mode
   "Buster mode" nil " Buster" buster-mode-map
-  (when buster-mode
-    (set (make-local-variable 'compilation-buffer-name-function) 'buster-mode--compilation-buffer-name)
-    (add-hook 'compilation-finish-functions 'buster-mode--clean-up-ansi-mess)))
+  (if buster-mode
+      (progn
+        (set (make-local-variable 'compilation-buffer-name-function) 'buster-mode--compilation-buffer-name)
+        (add-hook 'comint-output-filter-functions 'buster-mode--clean-up-ansi-mess t))
+    (remove-hook 'comint-output-filter-functions 'buster-mode--clean-up-ansi-mess)))
 
 (provide 'buster-mode)
 
