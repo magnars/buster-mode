@@ -1,0 +1,36 @@
+Running tests ...
+[1A[KRunning 17 tests in 1 runtime ...
+[1A[K[1m[31mFailure: [0mANSI table draws multi-line cells
+  [1m[31m[refute.equals] """Something In this
+          cell
+Other     There is
+           stuff
+" expected not to be equal to "Something In this
+          cell
+Other     There is
+           stuff
+"[0m
+    at Object.referee.fail (/home/christian/projects/busterjs/modules/referee/lib/referee.js:156:25)
+      at Object.fail (/home/christian/projects/busterjs/modules/referee/lib/referee.js:43:17)
+      at Function.referee.(anonymous function).(anonymous function) [as equals] (/home/christian/projects/busterjs/modules/referee/lib/referee.js:86:29)
+      at Object.buster.testCase.draws multi-line cells (./test/ansi-table-test.js:92:16)
+      at asyncFunction (/home/christian/projects/busterjs/modules/buster-test/lib/test-runner.js:230:19)
+      at callTestFn (/home/christian/projects/busterjs/modules/buster-test/lib/test-runner.js:340:27)
+      at p.then (/home/christian/projects/busterjs/modules/buster-test/node_modules/when/when.js:71:31)
+      at Object.then (/home/christian/projects/busterjs/modules/buster-test/node_modules/when/when.js:177:11)
+      at Object.bane.createEventEmitter.runTest (/home/christian/projects/busterjs/modules/buster-test/lib/test-runner.js:608:26)
+      at Object.bane.createEventEmitter.runTests (/home/christian/projects/busterjs/modules/buster-test/lib/test-runner.js:576:29)
+[1m[31mRunning 17 tests in 1 runtime ... 6% done[0m
+[1A[K[1m[31mRunning 17 tests in 1 runtime ... 12% done[0m
+[1A[K[1m[31mRunning 17 tests in 1 runtime ... 12% done[0m
+[1A[K[1m[31mRunning 17 tests in 1 runtime ... 35% done[0m
+[1A[K[1m[31mRunning 17 tests in 1 runtime ... 35% done[0m
+[1A[K[1m[31mRunning 17 tests in 1 runtime ... 47% done[0m
+[1A[K[1m[31mRunning 17 tests in 1 runtime ... 47% done[0m
+[1A[K[1m[31mRunning 17 tests in 1 runtime ... 53% done[0m
+[1A[K[1m[31mRunning 17 tests in 1 runtime ... 53% done[0m
+[1A[K[1m[31mRunning 17 tests in 1 runtime ... 59% done[0m
+[1A[K[1m[31mRunning 17 tests in 1 runtime ... 59% done[0m
+[1A[K[1m[31mRunning 17 tests in 1 runtime ... 88% done[0m
+[1A[K[1m[31mRunning 17 tests in 1 runtime ... 88% done[0m
+[1A[K[1m[31m17 tests, 18 assertions, 1 runtime ... 1 failure[0m

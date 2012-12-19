@@ -29,4 +29,4 @@
 
 (And "^I have passing tests$"
      (lambda ()
-       (setq buster-compile-command "./buster-test")))
+       (setq buster-compile-command "cat features/stubs/passing-tests")))

@@ -68,11 +68,18 @@
 (define-key buster-mode-map
   (kbd "C-c C-b ra") 'buster-run-all-tests)
 
+(defun buster-mode--clean-up-ansi-mess (&rest ignore)
+  (with-current-buffer "*compilation*"
+    (save-excursion
+      (goto-char (point-min))
+      (while (search-forward "[1A" nil t)
+        (delete-char -5)
+        (delete-char (- (current-column)))))))
+
 (define-minor-mode buster-mode
-  "Buster mode"
-  nil
-  " Buster"
-  buster-mode-map)
+  "Buster mode" nil " Buster" buster-mode-map
+  (when buster-mode
+    (add-hook 'compilation-finish-functions 'buster-mode--clean-up-ansi-mess)))
 
 (provide 'buster-mode)
 

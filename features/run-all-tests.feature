@@ -6,4 +6,5 @@ Feature: Run all tests
     And I press "C-c C-b ra"
     And I wait for the compilation to finish
     And I switch to buffer "*compilation*"
-    Then I should see "0 timeouts"
+    Then I should see "17 tests, 19 assertions, 1 runtime ... OK"
+    And I should not see "[1A"
