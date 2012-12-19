@@ -12,3 +12,21 @@
               (message "Can not go to character '%s' since it does not exist in the current buffer: %s"))
           (assert search nil message word (espuds-buffer-contents))
           (if (string-equal "front" pos) (backward-word)))))
+
+(When "^I wait for the compilation to finish$"
+     (lambda ()
+       (setq ecukes--waiting-for-compilation t)
+
+       (defun ecukes--compilation-finished (&rest ignore)
+         (setq ecukes--waiting-for-compilation nil)
+         (remove-hook 'compilation-finish-functions 'ecukes--compilation-finished))
+
+       (add-hook 'compilation-finish-functions 'ecukes--compilation-finished)
+
+       (while ecukes--waiting-for-compilation
+         (accept-process-output nil 0.005))
+       ))
+
+(And "^I have passing tests$"
+     (lambda ()
+       (setq buster-compile-command "./buster-test")))

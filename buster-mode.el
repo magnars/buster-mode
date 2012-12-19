@@ -51,10 +51,12 @@
   (interactive)
   (buster-toggle-test-name-prefix "=>"))
 
+(defvar buster-compile-command "buster-test"
+  "Command used to run Buster tests")
+
 (defun buster-run-all-tests ()
   (interactive)
-  (switch-to-buffer-other-window "*buster-test*")
-  (call-process "buster-test" nil "*buster-test*" t))
+  (compile buster-compile-command t))
 
 (defvar buster-mode-map (make-sparse-keymap)
   "buster-mode keymap")
