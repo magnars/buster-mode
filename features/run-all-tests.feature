@@ -5,6 +5,6 @@ Feature: Run all tests
     And I have passing tests
     And I press "C-c C-b ra"
     And I wait for the compilation to finish
-    And I switch to buffer "*compilation*"
+    And I switch to buffer "*buster-test*"
     Then I should see "17 tests, 19 assertions, 1 runtime ... OK"
     And I should not see "[1A"
