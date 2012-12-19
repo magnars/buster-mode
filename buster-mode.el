@@ -31,6 +31,8 @@
 
 ;;; Code:
 
+(require 'compile)
+
 (defun buster-goto-current-test ()
   (search-backward-regexp "[\"'][^ ]* .+[\"']: function" nil t))
 
@@ -83,6 +85,7 @@
   "Buster mode" nil " Buster" buster-mode-map
   (if buster-mode
       (progn
+        (add-to-list 'compilation-error-regexp-alist '("(\\([^: ]+\\):\\([0-9]+\\):\\([0-9]+\\))" 1 2 3))
         (set (make-local-variable 'compilation-buffer-name-function) 'buster-mode--compilation-buffer-name)
         (add-hook 'comint-output-filter-functions 'buster-mode--clean-up-ansi-mess t))
     (remove-hook 'comint-output-filter-functions 'buster-mode--clean-up-ansi-mess)))

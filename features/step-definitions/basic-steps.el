@@ -30,3 +30,7 @@
 (And "^I have passing tests$"
      (lambda ()
        (setq buster-compile-command "cat features/stubs/passing-tests")))
+
+(And "^I have failing tests$"
+     (lambda ()
+       (setq buster-compile-command "cat features/stubs/failing-tests")))
