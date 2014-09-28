@@ -43,7 +43,7 @@
     (if (not (looking-at prefix))
         (insert prefix " ")
       (delete-char (length prefix))
-      (while (looking-at " ") (delete-char 1)))))
+      (delete-horizontal-space))))
 
 (defun buster-toggle-deferred ()
   (interactive)
